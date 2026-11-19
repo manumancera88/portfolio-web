@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enmanuel Mancera · Desenvolvedor Full Stack</title>
+<meta name="description" content="Enmanuel Mancera, desenvolvedor full stack (.NET e Angular) com 4 anos de experiência em produção, SaaS multi-tenant e IA aplicada. Remoto, Brasil.">
+<meta property="og:title" content="Enmanuel Mancera · Full Stack Developer">
+<meta property="og:description" content="Full Stack (.NET e Angular), SaaS multi-tenant com JWT e 32 testes, IA aplicada. Portfólio.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231D3557'/%3E%3Ctext x='16' y='21' font-family='monospace' font-size='13' font-weight='700' fill='white' text-anchor='middle'%3EEM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=IBM+Plex+Mono:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #F7F8FA; color: #1A1A1A; font-family: 'IBM Plex Sans', system-ui, sans-serif; }
+  a { color: #1D3557; }
+  a:hover { color: #E2952E; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+  .serif { font-family: 'Fraunces', serif; }
+  .nav-link { text-decoration: none; color: #1A1A1A; font-size: 14px; font-weight: 500; background: none; border: none; cursor: pointer; font-family: 'IBM Plex Sans', sans-serif; padding: 0; }
+  .nav-link:hover { color: #E2952E; }
+  .kicker { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+  .kicker-mark { width: 22px; height: 3px; background: #E2952E; flex-shrink: 0; border-radius: 2px; }
+  .case-tag { font-family: 'IBM Plex Mono', monospace; font-size: 12px; background: #F7F8FA; border: 1px solid #E3E8EE; color: #6B7280; padding: 4px 12px; display: inline-block; margin-left: 28px; margin-top: -12px; position: relative; border-radius: 999px; }
+  .chip { font-family: 'IBM Plex Mono', monospace; font-size: 13px; border: 1px solid #E3E8EE; background: #F7F8FA; color: #1D3557; padding: 6px 14px; border-radius: 999px; }
+  .btn-primary { background: #1D3557; color: #FFFFFF; text-decoration: none; padding: 16px 30px; font-size: 15px; font-weight: 600; border-radius: 999px; display: inline-block; transition: transform 0.15s ease, background 0.15s ease; }
+  .btn-primary:hover { background: #163049; color: #FFFFFF; transform: translateY(-2px); }
+  .btn-accent { background: #E2952E; color: #10151D; text-decoration: none; padding: 16px 30px; font-size: 15px; font-weight: 700; border-radius: 999px; display: inline-block; transition: transform 0.15s ease, background 0.15s ease; }
+  .btn-accent:hover { background: #F0A63D; transform: translateY(-2px); }
+  .btn-outline { background: #FFFFFF; color: #1D3557; text-decoration: none; padding: 15px 29px; font-size: 15px; font-weight: 600; border-radius: 999px; display: inline-block; border: 1.5px solid #E3E8EE; transition: transform 0.15s ease, border-color 0.15s ease, color 0.15s ease; }
+  .btn-outline:hover { border-color: #E2952E; color: #E2952E; transform: translateY(-2px); }
+  .btn-outline-light { background: transparent; color: #FFFFFF; text-decoration: none; padding: 15px 29px; font-size: 15px; font-weight: 600; border-radius: 999px; display: inline-block; border: 1.5px solid rgba(255,255,255,0.4); transition: transform 0.15s ease, border-color 0.15s ease; }
+  .btn-outline-light:hover { border-color: #FFFFFF; transform: translateY(-2px); }
+  .icon-badge { width: 42px; height: 42px; border-radius: 12px; background: #1D3557; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .proj-panel { border: 1px solid #E3E8EE; border-radius: 18px; padding: 38px 34px 34px; background: #FFFFFF; box-shadow: 0 10px 32px rgba(29,53,87,0.06); }
+  .proj-panel-accent { height: 4px; border-radius: 4px; background: #1D3557; width: 56px; margin-bottom: 22px; }
+  .code-link { font-family: 'IBM Plex Mono', monospace; font-size: 13px; text-decoration: none; border: 1.5px solid #1D3557; padding: 8px 18px; border-radius: 999px; color: #1D3557; font-weight: 600; transition: background 0.15s ease, color 0.15s ease; }
+  .code-link:hover { background: #1D3557; color: #FFFFFF; }
+  .service-card { border: 1px solid #E3E8EE; border-radius: 18px; padding: 32px; background: #FFFFFF; box-shadow: 0 10px 32px rgba(29,53,87,0.05); }
+  .stat-block { display: flex; flex-direction: column; }
+  .tab-btn { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; border-radius: 999px; padding: 13px 20px; cursor: pointer; }
+  .lang-btn { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 999px; padding: 8px 13px; cursor: pointer; min-width: 40px; }
+  @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-rise { animation: rise 0.75s ease-out both; }
+  .hero-rise-2 { animation: rise 0.75s ease-out 0.12s both; }
+  .hero-rise-3 { animation: rise 0.75s ease-out 0.22s both; }
+  @media (prefers-reduced-motion: reduce) { .hero-rise, .hero-rise-2, .hero-rise-3 { animation: none; } }
+  @media (max-width: 860px) {
+    .hide-mobile { display: none; }
+    .section-pad { padding-left: 24px !important; padding-right: 24px !important; }
+    .two-col { flex-direction: column !important; }
+    .stats-row { flex-wrap: wrap !important; gap: 32px !important; }
+    .name-lockup { font-size: 40px !important; }
+    .name-row { flex-direction: column !important; align-items: flex-start !important; gap: 4px !important; }
+    .services-grid { grid-template-columns: minmax(0, 1fr) !important; }
+  }
+
+  .lang-btn,.tab-btn,.nav-link{font-family:inherit;}
+  *{box-sizing:border-box;}
+  img,svg{max-width:100%;}
+</style>
+</head>
+<body>
+<div style="max-width: 100%; box-sizing: border-box; display: flex; flex-direction: column; position: relative;">
+
+<!-- NAV -->
+<div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding: 24px 64px; border-bottom: 1px solid #E3E8EE; background: rgba(247,248,250,0.92); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 10;" class="section-pad">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <div class="mono" style="width: 36px; height: 36px; background: #1D3557; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; color: #FFFFFF; flex-shrink: 0; border-radius: 10px;">EM</div>
+    <span class="serif" style="font-weight: 700; font-size: 17px;">Enmanuel Mancera</span>
+  </div>
+  <nav aria-label="Navegação principal" style="display: flex; align-items: center; gap: 22px; flex-wrap: wrap;">
+    <a class="nav-link hide-mobile" href="#sobre"><span data-i="nav.sobre"></span></a>
+    <a class="nav-link hide-mobile" href="#stack"><span data-i="nav.stack"></span></a>
+    <a class="nav-link hide-mobile" href="#projetos"><span data-i="nav.projetos"></span></a>
+    <a class="nav-link hide-mobile" href="#experiencia"><span data-i="nav.experiencia"></span></a>
+    <a class="nav-link hide-mobile" href="#servicos"><span data-i="nav.servicos"></span></a>
+    <a class="nav-link" href="#contato"><span data-i="nav.contato"></span></a>
+    <div id="lang-buttons" style="display: flex; gap: 4px; padding: 3px; background: #EEF0F3; border-radius: 999px;">
+      
+    </div>
+    <a class="btn-primary" style="padding: 10px 20px; font-size: 13px;" id="cv-link" href="assets/CV_Enmanuel_Mancera_PT.docx" download><span data-i="nav.cv"></span></a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<div style="padding: 88px 64px 64px;" class="section-pad">
+  <div style="max-width: 1180px; margin: 0 auto;">
+    <div class="hero-rise name-row" style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px; flex-wrap: wrap;">
+      <div class="name-lockup serif" style="font-size: 68px; line-height: 1; font-weight: 600; color: #1A1A1A;">Enmanuel</div>
+      <div class="name-lockup serif" style="font-size: 68px; line-height: 1; font-weight: 600; font-style: italic; color: #8B96A3;">Mancera</div>
+    </div>
+    <div class="mono" style="font-size: 14px; color: #6B7280; margin-top: 20px; font-weight: 500;"><span data-i="hero.role"></span></div>
+
+    <div class="hero-rise-2" style="margin-top: 40px; max-width: 680px;">
+      <p style="font-size: 18px; line-height: 1.7; color: #4B5768; margin: 0 0 36px; max-width: 58ch;"><span data-i="hero.paragraph"></span></p>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <a class="btn-primary" href="#projetos"><span data-i="hero.ctaProjects"></span></a>
+        <a class="btn-outline" href="#contato"><span data-i="hero.ctaContact"></span></a>
+      </div>
+    </div>
+
+    <div class="hero-rise-3 stats-row" style="display: flex; gap: 56px; margin-top: 72px; padding: 40px 0; border-top: 1px solid #E3E8EE;">
+      <div class="stat-block">
+        <div class="serif" style="font-size: 38px; font-weight: 700; color: #1D3557;">4</div>
+        <div style="font-size: 14px; color: #6B7280; margin-top: 6px;"><span data-i="hero.statYears"></span></div>
+      </div>
+      <div class="stat-block">
+        <div class="serif" style="font-size: 38px; font-weight: 700; color: #1D3557;">3</div>
+        <div style="font-size: 14px; color: #6B7280; margin-top: 6px;"><span data-i="hero.statLangs"></span></div>
+      </div>
+      <div class="stat-block">
+        <div class="serif" style="font-size: 38px; font-weight: 700; color: #1D3557;">1</div>
+        <div style="font-size: 14px; color: #6B7280; margin-top: 6px;"><span data-i="hero.statAgency"></span></div>
+      </div>
+      <div class="stat-block">
+        <div class="serif" style="font-size: 38px; font-weight: 700; color: #1D3557;">100%</div>
+        <div style="font-size: 14px; color: #6B7280; margin-top: 6px;"><span data-i="hero.statRemote"></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<div id="sobre" style="padding: 100px 64px; border-top: 1px solid #E3E8EE; background: #FFFFFF;" class="section-pad">
+  <div style="max-width: 1180px; margin: 0 auto;">
+    <div class="kicker"><span class="kicker-mark"></span><span class="mono" style="font-size: 13px; color: #6B7280;"><span data-i="sobre.kicker"></span></span></div>
+    <h2 class="serif" style="font-size: 34px; font-weight: 700; margin: 0 0 28px; max-width: 22ch;"><span data-i="sobre.heading"></span></h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 64px;" class="two-col">
+      <p style="flex: 1 1 420px; min-width: 0; font-size: 17px; line-height: 1.8; color: #4B5768; margin: 0; max-width: 58ch;"><span data-i="sobre.p1"></span></p>
+      <p style="flex: 1 1 420px; min-width: 0; font-size: 17px; line-height: 1.8; color: #4B5768; margin: 0; max-width: 58ch;"><span data-i="sobre.p2"></span></p>
+    </div>
+  </div>
+</div>
+
+<!-- STACK -->
+<div id="stack" style="padding: 100px 64px; border-top: 1px solid #E3E8EE;" class="section-pad">
+  <div style="max-width: 1180px; margin: 0 auto;">
+    <div class="kicker"><span class="kicker-mark"></span><span class="mono" style="font-size: 13px; color: #6B7280;"><span data-i="stack.kicker"></span></span></div>
+    <h2 class="serif" style="font-size: 34px; font-weight: 700; margin: 0 0 12px;"><span data-i="stack.heading"></span></h2>
+    <p style="font-size: 16px; color: #6B7280; margin: 0 0 36px;"><span data-i="stack.sub"></span></p>
+
+    <div id="tabs" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px;">
+      
+    </div>
+
+    <div style="background: #10151D; border-radius: 16px; padding: 32px 36px; overflow-x: auto;">
+      <div class="mono" style="color: #7C8B99; font-size: 13px; margin-bottom: 10px;">// <span id="activeLabel"></span> · <span id="activeCount"></span> <span data-i="stack.tecnologias"></span></div>
+      <div class="mono" style="font-size: 14px; color: #E5E7EB; margin-bottom: 4px;"><span style="color: #7FB2E5;">export const</span> <span id="activeId"></span> = [</div>
+      <div id="items"></div>
+      <div class="mono" style="font-size: 14px; color: #E5E7EB;">]</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJETOS -->
+<div id="projetos" style="padding: 100px 64px; border-top: 1px solid #E3E8EE; background: #FFFFFF;" class="section-pad">
+  <div style="max-width: 1180px; margin: 0 auto;">
+    <div class="kicker"><span class="kicker-mark"></span><span class="mono" style="font-size: 13px; color: #6B7280;"><span data-i="projetos.kicker"></span></span></div>
+    <h2 class="serif" style="font-size: 34px; font-weight: 700; margin: 0 0 48px;"><span data-i="projetos.heading"></span></h2>
+    <div style="display: flex; flex-direction: column; gap: 32px;">
+
+      <div class="proj-panel">
+        <span class="case-tag">ops-pilot/</span>
+        <div style="margin-top: 20px;">
+          <div class="proj-panel-accent"></div>
+          <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 16px;">
+            <h3 class="serif" style="font-size: 24px; font-weight: 700; margin: 0;"><span data-i="projetos.ops.title"></span></h3>
+            <a href="https://github.com/manumancera88/ops-pilot" class="code-link"><span data-i="projetos.codeLink"></span></a>
+          </div>
+          <div class="mono" style="font-size: 13px; color: #E2952E; font-weight: 600; margin-top: 6px;"><span data-i="projetos.ops.sub"></span></div>
+          <p style="font-size: 15px; line-height: 1.75; color: #4B5768; margin: 16px 0 20px; max-width: 72ch;"><span data-i="projetos.ops.desc"></span></p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span class="chip" style="font-size: 12px; padding: 4px 12px;">Angular 21</span><span class="chip" style="font-size: 12px; padding: 4px 12px;">.NET 10</span><span class="chip" style="font-size: 12px; padding: 4px 12px;">SQL Server</span><span class="chip" style="font-size: 12px; padding: 4px 12px;">JWT</span><span class="chip" style="font-size: 12px; padding: 4px 12px;">Docker</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-panel">
+        <span class="case-tag">tuttiplas-bot/</span>
+        <div style="margin-top: 20px;">
+          <div class="proj-panel-accent"></div>
+          <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 16px;">
+            <h3 class="serif" style="font-size: 24px; font-weight: 700; margin: 0;"><span data-i="projetos.tutti.title"></span></h3>
+            <span class="mono" style="font-size: 12px; color: #6B7280; border: 1.5px solid #E3E8EE; padding: 8px 16px; border-radius: 999px; font-weight: 600;"><span data-i="projetos.privateBadge"></span></span>
+          </div>
+          <div class="mono" style="font-size: 13px; color: #E2952E; font-weight: 600; margin-top: 6px;"><span data-i="projetos.tutti.sub"></span></div>
+          <p style="font-size: 15px; line-height: 1.75; color: #4B5768; margin: 16px 0 20px; max-width: 72ch;"><span data-i="projetos.tutti.desc"></span></p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span class="chip" style="font-size: 12px; padding: 4px 12px;">Claude API</span><span class="chip" style="font-size: 12px; padding: 4px 12px;">WhatsApp API</span><span class="chip" style="font-size: 12px; padding: 4px 12px;">n8n</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-panel">
+        <span class="case-tag">career-copilot/</span>
+        <div style="margin-top: 20px;">
+          <div class="proj-panel-accent"></div>
+          <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 16px;">
+            <h3 class="serif" style="font-size: 24px; font-weight: 700; margin: 0;"><span data-i="projetos.career.title"></span></h3>
+            <a href="https://github.com/manumancera88/career-copilot" class="code-link"><span data-i="projetos.codeLink"></span></a>
+          </div>
+          <div class="mono" style="font-size: 13px; color: #E2952E; font-weight: 600; margin-top: 6px;"><span data-i="projetos.career.sub"></span></div>
+          <p style="font-size: 15px; line-height: 1.75; color: #4B5768; margin: 16px 0 20px; max-width: 72ch;"><span data-i="projetos.career.desc"></span></p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span class="chip" style="font-size: 12px; padding: 4px 12px;">Angular 21</span><span class="chip" style="font-size: 12px; padding: 4px 12px;">Signals</span><span class="chip" style="font-size: 12px; padding: 4px 12px;">Supabase</span><span class="chip" style="font-size: 12px; padding: 4px 12px;">Vercel</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCIA -->
+<div id="experiencia" style="padding: 100px 64px; border-top: 1px solid #E3E8EE;" class="section-pad">
+  <div style="max-width: 780px; margin: 0 auto;">
+    <div class="kicker"><span class="kicker-mark"></span><span class="mono" style="font-size: 13px; color: #6B7280;"><span data-i="experiencia.kicker"></span></span></div>
+    <h2 class="serif" style="font-size: 34px; font-weight: 700; margin: 0 0 48px;"><span data-i="experiencia.heading"></span></h2>
+
+    <div style="display: flex; flex-direction: column; gap: 56px;">
+      <div>
+        <div class="mono" style="font-size: 13px; color: #9CA3AF; margin-bottom: 8px;"><span data-i="experiencia.carglass.date"></span></div>
+        <div class="serif" style="font-size: 20px; font-weight: 700; margin-bottom: 4px;"><span data-i="experiencia.carglass.role"></span></div>
+        <div style="font-size: 15px; color: #6B7280; margin-bottom: 14px;"><span data-i="experiencia.carglass.place"></span></div>
+        <p style="font-size: 15px; line-height: 1.75; color: #4B5768; margin: 0; max-width: 60ch;"><span data-i="experiencia.carglass.desc"></span></p>
+      </div>
+
+      <div>
+        <div class="mono" style="font-size: 13px; color: #9CA3AF; margin-bottom: 8px;"><span data-i="experiencia.atual"></span></div>
+        <div class="serif" style="font-size: 20px; font-weight: 700; margin-bottom: 4px;"><span data-i="experiencia.bananeira.role"></span></div>
+        <div style="font-size: 15px; color: #6B7280; margin-bottom: 14px;"><span data-i="experiencia.bananeira.place"></span></div>
+        <p style="font-size: 15px; line-height: 1.75; color: #4B5768; margin: 0; max-width: 60ch;"><span data-i="experiencia.bananeira.desc"></span></p>
+      </div>
+
+      <div>
+        <div class="mono" style="font-size: 13px; color: #9CA3AF; margin-bottom: 8px;"><span data-i="experiencia.sutherland.date"></span></div>
+        <div class="serif" style="font-size: 20px; font-weight: 700; margin-bottom: 4px;"><span data-i="experiencia.sutherland.role"></span></div>
+        <div style="font-size: 15px; color: #6B7280; margin-bottom: 14px;"><span data-i="experiencia.sutherland.place"></span></div>
+        <p style="font-size: 15px; line-height: 1.75; color: #4B5768; margin: 0; max-width: 60ch;"><span data-i="experiencia.sutherland.desc"></span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICOS -->
+<div id="servicos" style="padding: 100px 64px; border-top: 1px solid #E3E8EE; background: #FFFFFF;" class="section-pad">
+  <div style="max-width: 1180px; margin: 0 auto;">
+    <div class="kicker"><span class="kicker-mark"></span><span class="mono" style="font-size: 13px; color: #6B7280;"><span data-i="servicos.kicker"></span></span></div>
+    <h2 class="serif" style="font-size: 34px; font-weight: 700; margin: 0 0 48px;"><span data-i="servicos.heading"></span></h2>
+    <div class="services-grid" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px;">
+
+      <div class="service-card">
+        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 16px;">
+          <span class="mono" style="font-size: 13px; color: #9CA3AF;">01</span>
+          <div class="icon-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></div>
+        </div>
+        <div style="font-size: 18px; font-weight: 700; margin-bottom: 6px;" class="serif"><span data-i="servicos.s1.title"></span></div>
+        <div style="font-size: 14px; color: #E2952E; font-weight: 600; margin-bottom: 14px;"><span data-i="servicos.s1.tag"></span></div>
+        <p style="font-size: 15px; line-height: 1.65; color: #4B5768; margin: 0 0 18px;"><span data-i="servicos.s1.desc"></span></p>
+        <ul style="margin: 0 0 18px; padding-left: 20px; font-size: 14px; color: #4B5768; line-height: 1.9;">
+          <li><span data-i="servicos.s1.b1"></span></li><li><span data-i="servicos.s1.b2"></span></li><li><span data-i="servicos.s1.b3"></span></li><li><span data-i="servicos.s1.b4"></span></li>
+        </ul>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="chip" style="font-size: 12px; padding: 4px 12px;">Angular</span><span class="chip" style="font-size: 12px; padding: 4px 12px;">TypeScript</span></div>
+      </div>
+
+      <div class="service-card">
+        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 16px;">
+          <span class="mono" style="font-size: 13px; color: #9CA3AF;">02</span>
+          <div class="icon-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="2"></circle><circle cx="19" cy="6" r="2"></circle><circle cx="19" cy="18" r="2"></circle><line x1="7" y1="11" x2="17" y2="7"></line><line x1="7" y1="13" x2="17" y2="17"></line></svg></div>
+        </div>
+        <div style="font-size: 18px; font-weight: 700; margin-bottom: 6px;" class="serif"><span data-i="servicos.s2.title"></span></div>
+        <div style="font-size: 14px; color: #E2952E; font-weight: 600; margin-bottom: 14px;"><span data-i="servicos.s2.tag"></span></div>
+        <p style="font-size: 15px; line-height: 1.65; color: #4B5768; margin: 0 0 18px;"><span data-i="servicos.s2.desc"></span></p>
+        <ul style="margin: 0 0 18px; padding-left: 20px; font-size: 14px; color: #4B5768; line-height: 1.9;">
+          <li><span data-i="servicos.s2.b1"></span></li><li><span data-i="servicos.s2.b2"></span></li><li><span data-i="servicos.s2.b3"></span></li><li><span data-i="servicos.s2.b4"></span></li>
+        </ul>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="chip" style="font-size: 12px; padding: 4px 12px;">Claude API</span><span class="chip" style="font-size: 12px; padding: 4px 12px;">n8n</span></div>
+      </div>
+
+      <div class="service-card">
+        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 16px;">
+          <span class="mono" style="font-size: 13px; color: #9CA3AF;">03</span>
+          <div class="icon-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"></path><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"></path></svg></div>
+        </div>
+        <div style="font-size: 18px; font-weight: 700; margin-bottom: 6px;" class="serif"><span data-i="servicos.s3.title"></span></div>
+        <div style="font-size: 14px; color: #E2952E; font-weight: 600; margin-bottom: 14px;"><span data-i="servicos.s3.tag"></span></div>
+        <p style="font-size: 15px; line-height: 1.65; color: #4B5768; margin: 0 0 18px;"><span data-i="servicos.s3.desc"></span></p>
+        <ul style="margin: 0 0 18px; padding-left: 20px; font-size: 14px; color: #4B5768; line-height: 1.9;">
+          <li><span data-i="servicos.s3.b1"></span></li><li><span data-i="servicos.s3.b2"></span></li><li><span data-i="servicos.s3.b3"></span></li><li><span data-i="servicos.s3.b4"></span></li>
+        </ul>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="chip" style="font-size: 12px; padding: 4px 12px;">.NET</span><span class="chip" style="font-size: 12px; padding: 4px 12px;">SQL Server</span></div>
+      </div>
+
+      <div class="service-card">
+        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 16px;">
+          <span class="mono" style="font-size: 13px; color: #9CA3AF;">04</span>
+          <div class="icon-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+        </div>
+        <div style="font-size: 18px; font-weight: 700; margin-bottom: 6px;" class="serif"><span data-i="servicos.s4.title"></span></div>
+        <div style="font-size: 14px; color: #E2952E; font-weight: 600; margin-bottom: 14px;"><span data-i="servicos.s4.tag"></span></div>
+        <p style="font-size: 15px; line-height: 1.65; color: #4B5768; margin: 0 0 18px;"><span data-i="servicos.s4.desc"></span></p>
+        <ul style="margin: 0 0 18px; padding-left: 20px; font-size: 14px; color: #4B5768; line-height: 1.9;">
+          <li><span data-i="servicos.s4.b1"></span></li><li><span data-i="servicos.s4.b2"></span></li><li><span data-i="servicos.s4.b3"></span></li><li><span data-i="servicos.s4.b4"></span></li>
+        </ul>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="chip" style="font-size: 12px; padding: 4px 12px;">Google Business</span><span class="chip" style="font-size: 12px; padding: 4px 12px;">SEO</span></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- CONTATO -->
+<div id="contato" style="padding: 110px 64px; border-top: 1px solid #E3E8EE; background: #1D3557;" class="section-pad">
+  <div style="max-width: 1180px; margin: 0 auto;">
+    <div class="kicker"><span class="kicker-mark" style="background: #E2952E;"></span><span class="mono" style="font-size: 13px; color: #9FB0C3;"><span data-i="contato.kicker"></span></span></div>
+    <h2 class="serif" style="font-size: 34px; font-weight: 700; margin: 0 0 18px; color: #FFFFFF;"><span data-i="contato.heading"></span></h2>
+    <p style="font-size: 17px; line-height: 1.7; color: #C9D3DD; margin: 0 0 40px; max-width: 56ch;"><span data-i="contato.p"></span></p>
+    <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 48px;">
+      <a data-wa href="#" class="btn-accent"><span data-i="contato.whats"></span></a>
+      <a href="mailto:emancera25@gmail.com" class="btn-outline-light"><span data-i="contato.email"></span></a>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 32px;">
+      <a href="mailto:emancera25@gmail.com" style="display: flex; align-items: center; gap: 10px; color: #C9D3DD; text-decoration: none; font-size: 14px;" class="mono">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9D3DD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M2 7l10 7 10-7"></path></svg>
+        emancera25@gmail.com
+      </a>
+      <a href="https://www.linkedin.com/in/enmanuelmancera" style="display: flex; align-items: center; gap: 10px; color: #C9D3DD; text-decoration: none; font-size: 14px;" class="mono">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9D3DD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle><path d="M10 9v12M10 13a4 4 0 0 1 8 0v8"></path></svg>
+        linkedin.com/in/enmanuelmancera
+      </a>
+      <a href="https://github.com/manumancera88" style="display: flex; align-items: center; gap: 10px; color: #C9D3DD; text-decoration: none; font-size: 14px;" class="mono">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9D3DD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.3 3.3 0 0 0-.9-2.5c3-.3 6-1.5 6-6.6a5.1 5.1 0 0 0-1.4-3.5 4.7 4.7 0 0 0-.1-3.5s-1.1-.3-3.6 1.3a12.3 12.3 0 0 0-6.6 0C6.1 1.7 5 2 5 2a4.7 4.7 0 0 0-.1 3.5A5.1 5.1 0 0 0 3.5 9c0 5.1 3 6.3 6 6.6a3.3 3.3 0 0 0-.9 2.5V22"></path></svg>
+        github.com/manumancera88
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="padding: 28px 64px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; background: #10151D;" class="section-pad">
+  <span class="mono" style="font-size: 12px; color: #7C8B99;"><span data-i="footer.rights"></span></span>
+  <span class="mono" style="font-size: 12px; color: #7C8B99;"><span data-i="footer.loc"></span></span>
+</div>
+
+<a data-wa href="#" style="position: fixed; bottom: 24px; right: 24px; width: 56px; height: 56px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,0.25); z-index: 50;" aria-label="WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+</a>
+
+</div>
+<script>
+const TRANSLATIONS = {
+  pt: {
+    nav: { sobre: 'Sobre', stack: 'Stack', projetos: 'Projetos', experiencia: 'Experiência', servicos: 'Serviços', contato: 'Contato', cv: 'Baixar CV' },
+    hero: {
+      role: 'Desenvolvedor Full Stack · .NET e Angular',
+      paragraph: 'Sou desenvolvedor full stack com 4 anos de experiência em produção com Angular e TypeScript, e backend em .NET e SQL Server. Minha trajetória começou no suporte técnico e evoluiu para o desenvolvimento de produtos digitais. Também integro inteligência artificial a aplicações reais.',
+      ctaProjects: 'Ver projetos', ctaContact: 'Falar comigo',
+      statYears: 'anos de experiência', statLangs: 'idiomas fluentes', statAgency: 'agência própria', statRemote: 'remoto'
+    },
+    sobre: {
+      kicker: 'Sobre', heading: 'Da interface ao sistema completo',
+      p1: 'Trabalhei quatro anos como desenvolvedor frontend na Carglass Brasil, de forma 100% remota, construindo e mantendo interfaces Angular em produção, integradas a APIs REST e aplicações híbridas .NET. Nos últimos meses, venho expandindo para backend em .NET e integração de IA aplicada a produtos reais. Já construí um agente conversacional que roda em produção para um cliente real e um SaaS multi-tenant com autenticação JWT e isolamento de dados testado entre organizações.',
+      p2: 'Também sou fundador da Bananeira Digital, uma agência de otimização de perfil no Google e SEO local para negócios em Franca, SP. Nasci em Caracas, Venezuela, e falo espanhol, português e inglês fluentemente.'
+    },
+    stack: { kicker: 'Stack', heading: 'stack.ts em uso ativo', sub: 'As ferramentas que uso de verdade, agrupadas por área.', tecnologias: 'tecnologias', cat: { frontend: 'Frontend', backend: 'Backend', ia: 'IA aplicada', tools: 'Ferramentas' } },
+    projetos: {
+      kicker: 'Projetos', heading: 'Projetos em destaque', codeLink: 'Ver código ↗', privateBadge: 'Projeto privado · cliente real',
+      ops: { title: 'OpsPilot', sub: 'SaaS multi-tenant · Angular 21 + .NET 10', desc: 'Aplicação full stack: frontend em Angular 21 com login, rotas protegidas, painel de clientes e agenda de atendimentos, e API em .NET 10 com SQL Server e Entity Framework Core. Autenticação JWT ponta a ponta e isolamento entre empresas testado com casos cruzados: usuários de uma empresa recebem 404 ao tentar acessar dados de outra, nos dois sentidos. Arquitetura em camadas (Controller, Service, DbContext). 32 testes automatizados com xUnit.' },
+      tutti: { title: 'Agente de IA para a Tuttiplas', sub: 'Agente conversacional · Claude API + WhatsApp', desc: 'Agente conversacional em produção real para um negócio familiar de copos personalizados em Caracas. Integração direta com a API da Anthropic (Claude) e a API oficial da Meta/WhatsApp, orquestrado via n8n. Interpreta linguagem natural para pedidos e preços, com escalonamento automático para um humano em casos de ambiguidade. Já processa pedidos reais hoje.' },
+      career: { title: 'Career Copilot', sub: 'Assistente de busca de emprego · Angular 21 + Supabase', desc: 'Angular 21 standalone, com signals e zoneless change detection, e Server-Side Rendering. Kanban de vagas com drag-and-drop via Angular CDK, autenticação e banco Postgres via Supabase. Implantado em produção.' }
+    },
+    experiencia: {
+      kicker: 'Experiência', heading: 'Trajetória profissional', atual: 'Atual',
+      carglass: { date: 'Out 2022 - Out 2026', role: 'Desenvolvedor Frontend', place: 'Carglass Brasil · Remoto', desc: 'Desenvolvimento e manutenção de aplicações Angular/TypeScript em produção, com integração a APIs REST e aplicações híbridas .NET/Razor. Controle de versão com Git, Pull Requests e revisão de código.' },
+      bananeira: { role: 'Fundador', place: 'Bananeira Digital', desc: 'Agência de otimização de perfil no Google Business e SEO local para negócios em Franca, SP.' },
+      sutherland: { date: 'Fev 2019 - Fev 2022', role: 'Especialista em Suporte Técnico', place: 'Sutherland · Bogotá, Colômbia', desc: 'Suporte técnico multilíngue (espanhol, português, inglês) para clientes no Brasil, Portugal e Angola em ferramentas Google Workspace, com troubleshooting estruturado.' }
+    },
+    servicos: {
+      kicker: 'Serviços', heading: 'Como posso ajudar',
+      s1: { title: 'Desenvolvimento Frontend Angular', tag: 'Interfaces rápidas, com Angular do jeito certo', desc: 'Construção e evolução de interfaces web, do zero ou em cima de uma base já existente, com foco em performance e código de fácil manutenção.', b1: 'Componentização e arquitetura limpa', b2: 'Integração com APIs REST', b3: 'Formulários reativos e validação', b4: 'Interfaces responsivas e acessíveis' },
+      s2: { title: 'Integração de IA a Produtos', tag: 'Agentes e automações que resolvem problemas reais', desc: 'Integração de modelos de linguagem a fluxos de negócio reais, do protótipo à produção, com regras claras de quando a IA decide e quando escala para um humano.', b1: 'Agentes conversacionais (WhatsApp, chat)', b2: 'Integração com APIs de LLMs', b3: 'Automação de fluxos com n8n', b4: 'Respostas estruturadas e tool calling' },
+      s3: { title: 'Backend e Bancos de Dados', tag: 'Sistemas completos, não só telas', desc: 'Modelagem de dados, APIs REST e autenticação segura em .NET, pensados para crescer com o negócio.', b1: 'APIs REST com ASP.NET Core', b2: 'Modelagem relacional em SQL Server', b3: 'Autenticação JWT e controle de acesso', b4: 'Arquitetura em camadas, testável' },
+      s4: { title: 'Otimização Local e SEO', tag: 'Mais visibilidade para negócios locais', desc: 'Via a Bananeira Digital: configuração e otimização de perfil no Google Business, para negócios de Franca, SP aparecerem com mais força nas buscas locais.', b1: 'Otimização de perfil no Google Business', b2: 'SEO local', b3: 'Acompanhamento de métricas de visibilidade', b4: 'Relatórios simples de desempenho' }
+    },
+    contato: { kicker: 'Contato', heading: 'Vamos conversar?', p: 'Estou disponível para oportunidades remotas e projetos freelance. Se tem uma vaga ou um projeto que combina com meu perfil, me chama.', whats: 'Chamar no WhatsApp', email: 'Enviar e-mail', waText: 'Olá Enmanuel! Vi seu portfólio e gostaria de conversar.' },
+    footer: { rights: '© 2026 Enmanuel Mancera', loc: 'Franca, SP, Brasil' }
+  },
+  en: {
+    nav: { sobre: 'About', stack: 'Stack', projetos: 'Projects', experiencia: 'Experience', servicos: 'Services', contato: 'Contact', cv: 'Download CV' },
+    hero: {
+      role: 'Full Stack Developer · .NET and Angular',
+      paragraph: "I'm a full stack developer with 4 years of production experience in Angular and TypeScript, plus backend work in .NET and SQL Server. My path started in technical support and grew into building digital products. I also integrate artificial intelligence into real applications.",
+      ctaProjects: 'View projects', ctaContact: 'Get in touch',
+      statYears: 'years of experience', statLangs: 'fluent languages', statAgency: 'own agency', statRemote: 'remote'
+    },
+    sobre: {
+      kicker: 'About', heading: 'From the interface to the full system',
+      p1: 'I worked for four years as a frontend developer at Carglass Brasil, fully remote, building and maintaining Angular interfaces in production, integrated with REST APIs and hybrid .NET applications. Over the past months, I have been expanding into .NET backend development and applying AI to real products. I have already built a conversational agent running in production for a real client and a multi-tenant SaaS with JWT authentication and tested data isolation between organizations.',
+      p2: "I'm also the founder of Bananeira Digital, an agency focused on Google Business Profile optimization and local SEO for businesses in Franca, Brazil. I was born in Caracas, Venezuela, and I speak Spanish, Portuguese and English fluently."
+    },
+    stack: { kicker: 'Stack', heading: 'stack.ts in active use', sub: 'The tools I actually use, grouped by area.', tecnologias: 'technologies', cat: { frontend: 'Frontend', backend: 'Backend', ia: 'Applied AI', tools: 'Tools' } },
+    projetos: {
+      kicker: 'Projects', heading: 'Featured projects', codeLink: 'View code ↗', privateBadge: 'Private project · real client',
+      ops: { title: 'OpsPilot', sub: 'Multi-tenant SaaS · Angular 21 + .NET 10', desc: 'Full stack app: Angular 21 frontend with login, protected routes, a customers panel and an appointments schedule, and a .NET 10 API with SQL Server and Entity Framework Core. JWT authentication end to end, and tenant isolation tested with cross-company checks: users from one company get a 404 when trying to access another company data, in both directions. Layered architecture (Controller, Service, DbContext). 32 automated xUnit tests.' },
+      tutti: { title: 'AI agent for Tuttiplas', sub: 'Conversational agent · Claude API + WhatsApp', desc: 'A conversational agent running in real production for a family business that makes custom printed cups in Caracas. Direct integration with the Anthropic (Claude) API and the official Meta/WhatsApp API, orchestrated through n8n. It interprets natural language for orders and pricing, with automatic escalation to a human in ambiguous cases. It already processes real orders today.' },
+      career: { title: 'Career Copilot', sub: 'Job search assistant · Angular 21 + Supabase', desc: 'Standalone Angular 21 app with signals and zoneless change detection, and Server-Side Rendering. A job-tracking kanban board with drag-and-drop via Angular CDK, authentication and a Postgres database via Supabase. Deployed to production.' }
+    },
+    experiencia: {
+      kicker: 'Experience', heading: 'Professional background', atual: 'Current',
+      carglass: { date: 'Oct 2022 - Oct 2026', role: 'Frontend Developer', place: 'Carglass Brasil · Remote', desc: 'Built and maintained Angular/TypeScript applications in production, integrating REST APIs and hybrid .NET/Razor applications. Version control with Git, Pull Requests and code review.' },
+      bananeira: { role: 'Founder', place: 'Bananeira Digital', desc: 'Agency focused on Google Business Profile optimization and local SEO for businesses in Franca, Brazil.' },
+      sutherland: { date: 'Feb 2019 - Feb 2022', role: 'Technical Support Specialist', place: 'Sutherland · Bogotá, Colombia', desc: 'Multilingual technical support (Spanish, Portuguese, English) for clients in Brazil, Portugal and Angola on Google Workspace tools, with structured troubleshooting.' }
+    },
+    servicos: {
+      kicker: 'Services', heading: 'How I can help',
+      s1: { title: 'Angular Frontend Development', tag: 'Fast interfaces, built the right way', desc: 'Building and evolving web interfaces, from scratch or on top of an existing codebase, with a focus on performance and maintainable code.', b1: 'Component architecture and clean code', b2: 'REST API integration', b3: 'Reactive forms and validation', b4: 'Responsive, accessible interfaces' },
+      s2: { title: 'AI Integration for Products', tag: 'Agents and automations that solve real problems', desc: 'Integrating language models into real business workflows, from prototype to production, with clear rules for when AI decides and when it escalates to a human.', b1: 'Conversational agents (WhatsApp, chat)', b2: 'LLM API integration', b3: 'Workflow automation with n8n', b4: 'Structured output and tool calling' },
+      s3: { title: 'Backend and Databases', tag: 'Complete systems, not just screens', desc: 'Data modeling, REST APIs and secure authentication in .NET, built to grow with the business.', b1: 'REST APIs with ASP.NET Core', b2: 'Relational modeling in SQL Server', b3: 'JWT authentication and access control', b4: 'Layered, testable architecture' },
+      s4: { title: 'Local SEO and Optimization', tag: 'More visibility for local businesses', desc: 'Through Bananeira Digital: setting up and optimizing Google Business profiles so local businesses in Franca, Brazil show up more in local search.', b1: 'Google Business profile optimization', b2: 'Local SEO', b3: 'Visibility metrics tracking', b4: 'Simple performance reports' }
+    },
+    contato: { kicker: 'Contact', heading: "Let's talk?", p: "I'm available for remote opportunities and freelance projects. If you have a role or a project that fits my profile, reach out.", whats: 'Message on WhatsApp', email: 'Send an email', waText: 'Hi Enmanuel! I saw your portfolio and would like to talk.' },
+    footer: { rights: '© 2026 Enmanuel Mancera', loc: 'Franca, SP, Brazil' }
+  },
+  es: {
+    nav: { sobre: 'Sobre mí', stack: 'Stack', projetos: 'Proyectos', experiencia: 'Experiencia', servicos: 'Servicios', contato: 'Contacto', cv: 'Descargar CV' },
+    hero: {
+      role: 'Desarrollador Full Stack · .NET y Angular',
+      paragraph: 'Soy desarrollador full stack con 4 años de experiencia en producción con Angular y TypeScript, y backend en .NET y SQL Server. Mi trayectoria comenzó en soporte técnico y evolucionó hacia el desarrollo de productos digitales. También integro inteligencia artificial en aplicaciones reales.',
+      ctaProjects: 'Ver proyectos', ctaContact: 'Hablemos',
+      statYears: 'años de experiencia', statLangs: 'idiomas fluidos', statAgency: 'agencia propia', statRemote: 'remoto'
+    },
+    sobre: {
+      kicker: 'Sobre mí', heading: 'De la interfaz al sistema completo',
+      p1: 'Trabajé cuatro años como desarrollador frontend en Carglass Brasil, de forma 100% remota, construyendo y manteniendo interfaces Angular en producción, integradas con APIs REST y aplicaciones híbridas en .NET. En los últimos meses, he estado expandiéndome hacia backend en .NET e integración de IA aplicada a productos reales. Ya construí un agente conversacional que funciona en producción para un cliente real y un SaaS multi-tenant con autenticación JWT y aislamiento de datos probado entre organizaciones.',
+      p2: 'También soy fundador de Bananeira Digital, una agencia de optimización de perfil en Google y SEO local para negocios en Franca, Brasil. Nací en Caracas, Venezuela, y hablo español, portugués e inglés con fluidez.'
+    },
+    stack: { kicker: 'Stack', heading: 'stack.ts en uso activo', sub: 'Las herramientas que realmente uso, agrupadas por área.', tecnologias: 'tecnologías', cat: { frontend: 'Frontend', backend: 'Backend', ia: 'IA aplicada', tools: 'Herramientas' } },
+    projetos: {
+      kicker: 'Proyectos', heading: 'Proyectos destacados', codeLink: 'Ver código ↗', privateBadge: 'Proyecto privado · cliente real',
+      ops: { title: 'OpsPilot', sub: 'SaaS multi-tenant · Angular 21 + .NET 10', desc: 'Aplicación full stack: frontend en Angular 21 con login, rutas protegidas, panel de clientes y agenda de citas, y API en .NET 10 con SQL Server y Entity Framework Core. Autenticación JWT de principio a fin, y aislamiento entre empresas probado con casos cruzados: usuarios de una empresa reciben 404 al intentar acceder a datos de otra, en ambos sentidos. Arquitectura en capas (Controller, Service, DbContext). 32 pruebas automatizadas con xUnit.' },
+      tutti: { title: 'Agente de IA para Tuttiplas', sub: 'Agente conversacional · API de Claude + WhatsApp', desc: 'Agente conversacional en producción real para un negocio familiar de vasos personalizados en Caracas. Integración directa con la API de Anthropic (Claude) y la API oficial de Meta/WhatsApp, orquestado vía n8n. Interpreta lenguaje natural para pedidos y precios, con escalamiento automático a un humano en casos de ambigüedad. Ya procesa pedidos reales hoy.' },
+      career: { title: 'Career Copilot', sub: 'Asistente de búsqueda de empleo · Angular 21 + Supabase', desc: 'Angular 21 standalone, con signals y zoneless change detection, y Server-Side Rendering. Kanban de vacantes con drag-and-drop vía Angular CDK, autenticación y base de datos Postgres vía Supabase. Desplegado en producción.' }
+    },
+    experiencia: {
+      kicker: 'Experiencia', heading: 'Trayectoria profesional', atual: 'Actual',
+      carglass: { date: 'Oct 2022 - Oct 2026', role: 'Desarrollador Frontend', place: 'Carglass Brasil · Remoto', desc: 'Desarrollo y mantenimiento de aplicaciones Angular/TypeScript en producción, con integración a APIs REST y aplicaciones híbridas .NET/Razor. Control de versiones con Git, Pull Requests y revisión de código.' },
+      bananeira: { role: 'Fundador', place: 'Bananeira Digital', desc: 'Agencia de optimización de perfil en Google Business y SEO local para negocios en Franca, Brasil.' },
+      sutherland: { date: 'Feb 2019 - Feb 2022', role: 'Especialista en Soporte Técnico', place: 'Sutherland · Bogotá, Colombia', desc: 'Soporte técnico multilingüe (español, portugués, inglés) para clientes en Brasil, Portugal y Angola en herramientas de Google Workspace, con resolución de problemas estructurada.' }
+    },
+    servicos: {
+      kicker: 'Servicios', heading: 'Cómo puedo ayudar',
+      s1: { title: 'Desarrollo Frontend con Angular', tag: 'Interfaces rápidas, hechas de la forma correcta', desc: 'Construcción y evolución de interfaces web, desde cero o sobre una base ya existente, con foco en rendimiento y código fácil de mantener.', b1: 'Componentización y arquitectura limpia', b2: 'Integración con APIs REST', b3: 'Formularios reactivos y validación', b4: 'Interfaces responsivas y accesibles' },
+      s2: { title: 'Integración de IA en Productos', tag: 'Agentes y automatizaciones que resuelven problemas reales', desc: 'Integración de modelos de lenguaje en flujos de negocio reales, desde el prototipo hasta producción, con reglas claras de cuándo decide la IA y cuándo escala a un humano.', b1: 'Agentes conversacionales (WhatsApp, chat)', b2: 'Integración con APIs de LLMs', b3: 'Automatización de flujos con n8n', b4: 'Respuestas estructuradas y tool calling' },
+      s3: { title: 'Backend y Bases de Datos', tag: 'Sistemas completos, no solo pantallas', desc: 'Modelado de datos, APIs REST y autenticación segura en .NET, pensados para crecer junto al negocio.', b1: 'APIs REST con ASP.NET Core', b2: 'Modelado relacional en SQL Server', b3: 'Autenticación JWT y control de acceso', b4: 'Arquitectura en capas, testeable' },
+      s4: { title: 'Optimización Local y SEO', tag: 'Más visibilidad para negocios locales', desc: 'A través de Bananeira Digital: configuración y optimización de perfil en Google Business, para que negocios de Franca, Brasil, aparezcan con más fuerza en las búsquedas locales.', b1: 'Optimización de perfil en Google Business', b2: 'SEO local', b3: 'Seguimiento de métricas de visibilidad', b4: 'Informes simples de desempeño' }
+    },
+    contato: { kicker: 'Contacto', heading: '¿Hablamos?', p: 'Estoy disponible para oportunidades remotas y proyectos freelance. Si tienes una vacante o un proyecto que combine con mi perfil, escríbeme.', whats: 'Escribir por WhatsApp', email: 'Enviar correo', waText: '¡Hola Enmanuel! Vi tu portafolio y me gustaría conversar.' },
+    footer: { rights: '© 2026 Enmanuel Mancera', loc: 'Franca, SP, Brasil' }
+  }
+};
+const STACK=[
+ {id:'frontend',items:['Angular','TypeScript','JavaScript (ES6+)','RxJS & Signals','HTML5 / CSS3','Figma']},
+ {id:'backend',items:['C#','ASP.NET Core','Entity Framework Core','SQL Server','REST APIs','JWT']},
+ {id:'ia',items:['API Claude (Anthropic)','API Gemini','Tool calling','Orquestração com n8n']},
+ {id:'tools',items:['Git / GitHub','Docker','Vercel','Supabase']}];
+const TITLES={pt:'Enmanuel Mancera · Desenvolvedor Full Stack',en:'Enmanuel Mancera · Full Stack Developer',es:'Enmanuel Mancera · Desarrollador Full Stack'};
+const HTMLLANG={pt:'pt-BR',en:'en',es:'es'};
+let lang='pt',tab='frontend';
+try{const s=localStorage.getItem('lang');if(s&&TRANSLATIONS[s])lang=s;}catch(e){}
+function get(o,p){return p.split('.').reduce((a,k)=>a&&a[k],o);}
+function mk(tag,cls,style,text,onclick){const e=document.createElement(tag);if(cls)e.className=cls;if(style)e.setAttribute('style',style);e.textContent=text;if(onclick)e.addEventListener('click',onclick);return e;}
+function render(){
+ const t=TRANSLATIONS[lang];
+ document.documentElement.lang=HTMLLANG[lang];document.title=TITLES[lang];
+ document.querySelectorAll('[data-i]').forEach(el=>{el.textContent=get(t,el.dataset.i)||'';});
+ const lb=document.getElementById('lang-buttons');lb.replaceChildren();
+ ['pt','en','es'].forEach(c=>{const b=mk('button','lang-btn',c===lang?'background:#1D3557;color:#FFFFFF;border:none;':'background:transparent;color:#6B7280;border:none;',c.toUpperCase(),()=>{lang=c;try{localStorage.setItem('lang',c);}catch(e){}render();});b.setAttribute('aria-label',c.toUpperCase());lb.appendChild(b);});
+ const tb=document.getElementById('tabs');tb.replaceChildren();
+ STACK.forEach(c=>{const on=c.id===tab;tb.appendChild(mk('button','tab-btn',on?'background:#1D3557;color:#FFFFFF;border:1.5px solid #1D3557;':'background:#FFFFFF;color:#6B7280;border:1.5px solid #E3E8EE;',t.stack.cat[c.id]+' · '+c.items.length,()=>{tab=c.id;render();}));});
+ const a=STACK.find(c=>c.id===tab);
+ document.getElementById('activeLabel').textContent=t.stack.cat[a.id];
+ document.getElementById('activeCount').textContent=a.items.length;
+ document.getElementById('activeId').textContent=a.id;
+ const it=document.getElementById('items');it.replaceChildren();
+ a.items.forEach((l,i)=>{const d=document.createElement('div');d.className='mono';d.setAttribute('style','font-size: 14px; padding-left: 24px; margin-bottom: 4px;');
+  const n=mk('span',null,'color: #5B6472;',String(i+1));const s=mk('span',null,'color: #A5D6A7;',' "'+l+'"');const c=mk('span',null,'color: #E5E7EB;',',');d.append(n,s,c);it.appendChild(d);});
+ const wa='https://wa.me/5516996400410?text='+encodeURIComponent(t.contato.waText);
+ document.querySelectorAll('[data-wa]').forEach(e=>e.href=wa);
+ document.getElementById('cv-link').href=lang==='en'?'assets/CV_Enmanuel_Mancera_EN.docx':'assets/CV_Enmanuel_Mancera_PT.docx';
+}
+render();
+</script>
+</body>
+</html>
